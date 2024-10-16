@@ -1,9 +1,11 @@
 import { useEffect } from "react";
-import "./App.css";
 import CheckboxFlex from "./components/CheckboxFlex";
 import { io } from "socket.io-client";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-const socket = io("https://one-thousand-checkboxes-back.onrender.com");
+/* const socket = io("https://one-thousand-checkboxes-back.onrender.com"); */
+const socket = io("http://localhost:3000/");
 
 function App() {
   useEffect(() => {
@@ -26,16 +28,17 @@ function App() {
 
   return (
     <>
+      <Header />
       <main
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          height: "100vh",
         }}
       >
         <CheckboxFlex socket={socket} />
       </main>
+      <Footer />
     </>
   );
 }
