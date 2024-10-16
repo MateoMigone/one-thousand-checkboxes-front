@@ -4,8 +4,7 @@ import { io } from "socket.io-client";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-/* const socket = io("https://one-thousand-checkboxes-back.onrender.com"); */
-const socket = io("http://localhost:3000/");
+const socket = io("https://one-thousand-checkboxes-back.onrender.com");
 
 function App() {
   useEffect(() => {
